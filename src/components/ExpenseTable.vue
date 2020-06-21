@@ -30,10 +30,12 @@
       </el-table-column>
       <el-table-column
         label="Amount"
+        sortable
         prop="amount">
       </el-table-column>
       <el-table-column
         label="Date"
+        sortable
         prop="date">
       </el-table-column>
       <el-table-column

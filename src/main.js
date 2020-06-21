@@ -6,7 +6,7 @@ import "@fortawesome/fontawesome-free/js/brands";
 
 import Vue from 'vue'
 import App from './App.vue'
-import  './assets/css/app.scss'
+import  './assets/scss/app.scss'
 import ElementUI from "element-ui";
 import locale from "element-ui/lib/locale";
 

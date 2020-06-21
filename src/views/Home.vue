@@ -10,8 +10,15 @@
       <div class="mt-6">
          <ExpenseTable/>
       </div>      
-    </div>    
-    
+    </div>  
+    <!-- Modal   -->
+    <Modal :formType="formType">
+       <div>
+        <ExpenseForm />
+        <DeleteCard />
+        <ConfirmationCard />
+       </div>
+    </Modal>
   </div>
 </template>
 
@@ -19,6 +26,10 @@
 import Header from '@/components/Header'
 import ActionBar from '@/components/ActionBar'
 import ExpenseTable from '@/components/ExpenseTable'
+import Modal from '@/components/Modal'
+import ExpenseForm from '@/components/ExpenseForm'
+import DeleteCard from '@/components/DeleteCard'
+import ConfirmationCard from '@/components/ConfirmationCard'
 
 
 export default {
@@ -26,7 +37,22 @@ export default {
   components: {
     Header,
     ActionBar,
-    ExpenseTable
+    ExpenseTable,
+    Modal,
+    ExpenseForm,
+    DeleteCard,
+    ConfirmationCard
+  },
+  data(){
+    return{
+      actionType: "",
+      formType:{
+        create: true,
+        delete: false,
+        confirm: false
+      }
+      
+    }
   }
 }
 </script>
