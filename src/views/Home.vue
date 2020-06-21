@@ -3,11 +3,14 @@
     <div>
       <Header msg="ExpMgr"/>
     </div>
-    <div class="">
-      <ActionBar/>
-      <ExpenseTable/>
-    </div>
-    
+    <div class="p-10">
+      <div>
+        <ActionBar/>
+      </div>
+      <div class="mt-6">
+         <ExpenseTable/>
+      </div>      
+    </div>    
     
   </div>
 </template>

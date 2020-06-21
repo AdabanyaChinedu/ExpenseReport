@@ -17,6 +17,7 @@
       </el-table-column>
       <el-table-column
         label="Item Id"
+        sortable
         prop="itemId">
       </el-table-column>
       <el-table-column
