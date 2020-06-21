@@ -6,5 +6,8 @@ module.exports = {
       preProcessor: "scss",
       patterns: [path.resolve(__dirname, "@/assets/css/app.scss")]
     }
+  },
+  configureWebpack: {
+  
   }
 };

@@ -1,6 +1,11 @@
+import  '@/assets/css/app.scss'
 import Vue from 'vue'
 import App from './App.vue'
-import  './assets/css/app.scss'
+import ElementUI from "element-ui";
+import locale from "element-ui/lib/locale";
+
+
+Vue.use(ElementUI, { locale });
 
 Vue.config.productionTip = false
 
