@@ -42,7 +42,7 @@
         label="Actions">
         <template slot-scope="props">
           <span class="cursor-pointer"  :key= "props.row.id+ '-a'"> 
-            <i class='fas fa-pen fa-sm text-blue-500'></i>
+            <i class='fas fa-pen fa-sm text-blue-800'></i>
           </span>     
           <span class="cursor-pointer"  :key= "props.row.id + '-b'" >
             <i class='fas fa-trash fa-sm text-red-800 ml-4'></i>

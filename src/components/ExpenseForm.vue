@@ -31,17 +31,44 @@
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
         <label class="block uppercase tracking-wide text-gray-700 text-xs mx-3 font-bold mb-2" for="description">
-            Description
+            Description <i class="italic capitalize font-normal">(Optional)</i>
           </label>
         <textarea type="text" class="appearance-none w-full text-sm p-2 mx-3 resize-none border focus:border-1 focus:border-gray-800" id="description" rows="8"></textarea>
       </div>
 
       <div class="flex flex-wrap justify-end mt-10">
-        <button class="text-gray-800 px-2 py-1 border border-gray-800 text-sm font-medium mr-3">Cancel</button>
-        <button class="text-white px-3 py-1 border bg-gray-800 text-sm font-semibold">Add</button>
+        <button @click="$emit('close-modal')" class="text-blue-800 px-2 py-1 border border-blue-900 text-sm font-medium mr-3">Cancel</button>
+        <button @click="$emit('create-expense', expense)" class="text-white px-3 py-1 border bg-blue-900 text-sm font-semibold">Add</button>
       </div>
-
       
     </form>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'ExpenseForm',
+  props: {
+    
+  },
+  data(){
+    return{
+       expense:{
+         name: "",
+         amount: "",
+         category: "",
+         date:"",
+         description:""
+       }
+    }
+  },
+  methods:{
+    
+  }
+}
+</script>
+
+
+<style scoped>
+
+</style>

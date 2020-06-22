@@ -1,5 +1,5 @@
 <template>
-  <div id="modal" class="fixed inset-0 h-full w-full bg-gray-800 bg-opacity-25 cursor-default flex z-20 overflow-auto">
+  <div id="modal" @click.self="$emit('close-modal')" class="fixed inset-0 h-full w-full bg-gray-800 bg-opacity-25 cursor-default flex z-20 overflow-auto">
     <div v-bind:class="formWidthClass" class="fixed shadow-inner md:relative pin-b pin-x align-top m-auto md:justify-center p-8 bg-white md:h-auto md:shadow w-full flex flex-col">
       <slot></slot>          
     </div>
@@ -30,7 +30,6 @@ export default {
   }
 }
 </script>
-
 
 <style scoped>
 

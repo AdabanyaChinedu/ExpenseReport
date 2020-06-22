@@ -5,18 +5,18 @@
     </div>
     <div class="p-10">
       <div>
-        <ActionBar/>
+        <ActionBar @open-create-form="openModal('create_expense')"/>
       </div>
       <div class="mt-6">
          <ExpenseTable/>
       </div>      
     </div>  
     <!-- Modal   -->
-    <Modal :formType="formType">
+    <Modal v-if="modal" @close-modal="closeModal()" :formType="formType">
        <div>
-        <ExpenseForm />
-        <DeleteCard />
-        <ConfirmationCard />
+        <ExpenseForm v-if="formType.create" @close-modal="closeModal()" @create-form="createExpense()"/>
+        <DeleteCard v-if="formType.delete"/>
+        <ConfirmationCard v-if="formType.confirm"/>
        </div>
     </Modal>
   </div>
@@ -50,8 +50,29 @@ export default {
         create: true,
         delete: false,
         confirm: false
+      },
+      modal: false      
+    }
+  },
+  methods:{
+    openModal(actionType){
+      this.modal = true
+      if(actionType == "create_expense"){
+        this.formType.create = true
       }
-      
+      if(actionType == "edit_expense"){
+        this.formType.create = true
+      }
+      if(actionType == "delete_expense"){
+        this.formType.delete = true
+      }
+
+    },
+    closeModal(){
+      this.modal= false
+    },
+    createExpense(expense){
+     alert(expense)
     }
   }
 }

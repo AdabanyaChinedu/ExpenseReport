@@ -1,9 +1,8 @@
 <template>
   <div class="w-full flex items-center">
-     <button class="text-gray-800 px-2 py-1 border-2 border-gray-800 text-sm font-semibold">
+     <button @click="$emit('open-create-form')" class="text-blue-900 px-2 py-1 border-2 border-blue-900 text-sm font-semibold">
        New Expense
-     </button>
-     
+     </button>     
   </div>
 </template>
 
@@ -11,6 +10,14 @@
 export default {
   name: 'ActionBar',
   props: {
+    
+  },
+  data(){
+    return{
+
+    }
+  },
+  methods:{
     
   }
 }
