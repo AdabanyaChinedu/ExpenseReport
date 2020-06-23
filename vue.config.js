@@ -7,6 +7,9 @@ module.exports = {
       patterns: [path.resolve(__dirname, "@/assets/scss/app.scss")]
     }
   },
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/expensereport/'
+    : '/'
   configureWebpack: {
   
   }
