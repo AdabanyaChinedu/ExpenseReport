@@ -12,7 +12,7 @@ import locale from "element-ui/lib/locale";
 
 Vue.use(ElementUI, { locale });
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
 
 new Vue({
   render: h => h(App),
