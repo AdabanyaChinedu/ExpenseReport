@@ -1,5 +1,4 @@
 const path = require("path");
-
 module.exports = {
   pluginOptions: {
     "style-resources-loader": {
@@ -8,9 +7,9 @@ module.exports = {
     }
   },
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/expensereport/'
+    ? '/dist/'
     : '/',
-  configureWebpack: {
-  
-  }
+    configureWebpack: {
+      devtool: 'source-map'
+    } 
 };
