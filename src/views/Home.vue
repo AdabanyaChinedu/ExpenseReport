@@ -8,15 +8,15 @@
         <ActionBar @open-create-form="openModal('create_expense')"/>
       </div>
       <div class="mt-6">
-         <ExpenseTable/>
+         <ExpenseTable :expenses="expenses"/>
       </div>      
     </div>  
     <!-- Modal   -->
-    <Modal v-if="modal" @close-modal="closeModal()" :formType="formType">
+    <Modal v-if="modal" @close-modal="closeModal()"  :formType="formType">
        <div>
-        <ExpenseForm v-if="formType.create" @close-modal="closeModal()" @create-form="createExpense()"/>
+        <ExpenseForm v-if="formType.create" @close-modal="closeModal()" @create-expense="createExpense"/>
         <DeleteCard v-if="formType.delete"/>
-        <ConfirmationCard v-if="formType.confirm"/>
+        <ConfirmationCard v-if="formType.confirm" :confirmMsg="confirmMsg"/>
        </div>
     </Modal>
   </div>
@@ -47,23 +47,27 @@ export default {
     return{
       actionType: "",
       formType:{
-        create: true,
+        create: false,
         delete: false,
         confirm: false
       },
-      modal: false      
+      modal: false,
+      confirmMsg: "",
+      createSuccessful: false,
+      expenses:[]
     }
   },
+  
   methods:{
     openModal(actionType){
       this.modal = true
-      if(actionType == "create_expense"){
+      if(actionType === "create_expense"){
         this.formType.create = true
       }
-      if(actionType == "edit_expense"){
+      if(actionType === "edit_expense"){
         this.formType.create = true
       }
-      if(actionType == "delete_expense"){
+      if(actionType === "delete_expense"){
         this.formType.delete = true
       }
 
@@ -72,9 +76,20 @@ export default {
       this.modal= false
     },
     createExpense(expense){
-     alert(expense)
+      let expenses = JSON.parse(localStorage.getItem('expenses')) || []
+      expense.itemId = expenses.length + 1
+      expenses.push(expense)
+      this.expenses.push(expense)
+      localStorage.setItem("expenses", JSON.stringify(expenses))
+      this.createSuccessful = true
     }
-  }
+  },
+  mounted(){
+    
+      this.expenses = JSON.parse(localStorage.getItem("expenses")) || [];
+    }
+    
+  
 }
 </script>
 

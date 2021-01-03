@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <el-table
-      :data="tableData"
+      :data="expenses"
       style="width: 100%">
       <el-table-column type="expand">
         <template slot-scope="props">
@@ -56,23 +56,29 @@
 <script>
 export default {
   name: 'ExpenseTable',
-  props: {
-    
+  props: {    
+    expenses:{
+      type: Array,
+      required: true
+    }
   },
   data(){
         return {
-        tableData: [{
-          itemId: '1',
-          name: 'Chocolate',
-          category: 'California',
-          amount: 'Los Angeles',
-          description: 'Hello 123',
-          date: '2016-05-03'
-          }
-        ]
+        tableData: []
       }
-    }
+    },
+  computed:{
+    // expenses: {
+    //   get: function () {
+    //     return JSON.parse(localStorage.getItem('expenses')) || [];
+    //   },
+    //   set: function (value) {
+    //     localStorage.clear()       
+    //     localStorage.setItem("expenses", JSON.stringify(value))
+    //   }
+    // }
   }
+}
 </script>
  
 
