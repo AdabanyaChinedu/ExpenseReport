@@ -10,7 +10,7 @@ import ElementUI from "element-ui"
 import locale from "element-ui/lib/locale"
 // import '../node_modules/element-ui/lib/theme-chalk/reset.css'
 import './assets/scss/app.scss'
-import './assets/scss/element-variable.scss'
+// import './assets/scss/element-variable.scss'
 
 
 
