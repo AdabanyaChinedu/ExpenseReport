@@ -7,7 +7,7 @@ module.exports = {
     }
   },
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/dist/'
+    ? '/ExpenseReport/'
     : '/',
     configureWebpack: {
       devtool: 'source-map'
